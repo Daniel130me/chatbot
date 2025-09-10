@@ -7,22 +7,22 @@ const Home = () => {
     const handleChange = (e) => {
         setInput(e.target.value)
     }
-// allmessages = {
-//     role: "user",
-//     contemt: "what is life",
+    // allmessages = {
+    //     role: "user",
+    //     contemt: "what is life",
 
-//     model: "life is impossnce o c",
-//     content: "life s impssie  i",
+    //     model: "life is impossnce o c",
+    //     content: "life s impssie  i",
 
-//     role: "user",
-//     content: "how did you nw"
-// }
-    const handleSubmit = async(e) => {
+    //     role: "user",
+    //     content: "how did you nw"
+    // }
+    const handleSubmit = async (e) => {
         e.preventDefault()
         console.log("my form")
         const themessage = {
             "role": "user",
-            "content":input 
+            "content": input
         }
         let updatedhistory = [...history, themessage];
         setHistory([...history, themessage])
@@ -35,15 +35,16 @@ const Home = () => {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                "model": "deepseek/deepseek-chat-v3.1:free",
-                "messages": updatedhistory
+                model: "@preset/node71-chat",
+                messages: updatedhistory
             })
+
         });
 
         let thedata = await response.json()
         console.log(thedata)
         setData(thedata.choices[0].message.content)
-        setHistory((previousdata)=>([...previousdata, thedata.choices[0].message]))
+        setHistory((previousdata) => ([...previousdata, thedata.choices[0].message]))
     }
 
     return (
