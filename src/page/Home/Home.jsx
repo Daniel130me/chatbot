@@ -34,6 +34,7 @@ const Home = () => {
                 "X-Title": "node 71 limited",
                 "Content-Type": "application/json"
             },
+            
             body: JSON.stringify({
                 model: "@preset/node71-chat",
                 messages: updatedhistory
