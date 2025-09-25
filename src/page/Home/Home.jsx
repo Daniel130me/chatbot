@@ -29,7 +29,7 @@ const Home = () => {
         let response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
             method: "POST",
             headers: {
-                "Authorization": "Bearer <token>",
+                "Authorization": `Bearer ${import.meta.env.VITE_API_KEY}`,
                 "HTTP-Referer": "node71.com",
                 "X-Title": "node 71 limited",
                 "Content-Type": "application/json"
@@ -52,7 +52,7 @@ const Home = () => {
         <>
             <h1>Our AI project</h1>
             <form onSubmit={handleSubmit}>
-                <input type="text" onChange={handleChange} value={input} placeholder="type your prompt here" />
+                <textarea rows={10} style={{ width: "100%" }} onChange={handleChange} value={input} placeholder="type your prompt here" />
                 <button type="submit">Send</button>
             </form>
             <div><ReactMArkdown>{data}</ReactMArkdown></div>
