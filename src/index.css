@@ -1,23 +1,29 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 :root {
-    --primary-color: #007bff;
+    --primary-color: #6e00ff;
     --primary-color-dark: #0056b3;
     --background-color: #ffffff;
     --text-color: #333333;
     --border-color: #dddddd;
     --input-bg: #f9f9f9;
-    --user-message-bg: #e9f5ff;
+    --user-message-bg: #f0d9fc;
     --model-message-bg: #f1f1f1;
     --disabled-color: #cccccc;
 }
 
 [data-theme="dark"] {
-    --primary-color: #007bff;
+    --primary-color: #6e00ff;
     --primary-color-dark: #0056b3;
     --background-color: #1a1a1a;
     --text-color: #ffffff;
     --border-color: #444444;
     --input-bg: #2a2a2a;
-    --user-message-bg: #004c8c;
+    --user-message-bg: #f0d9fc;
     --model-message-bg: #3a3a3a;
     --disabled-color: #555555;
 }
