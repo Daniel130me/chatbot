@@ -50,7 +50,7 @@ const Home = () => {
 
     return (
         <>
-            <h1>Our AI project</h1>
+            <h1>New AI project</h1>
             <form onSubmit={handleSubmit}>
                 <textarea rows={10} style={{ width: "100%" }} onChange={handleChange} value={input} placeholder="type your prompt here" />
                 <button type="submit">Send</button>
